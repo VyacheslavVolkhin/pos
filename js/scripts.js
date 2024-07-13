@@ -1,4 +1,30 @@
+//button scroll up
+let buttonUp = document.getElementById("button-up");
+buttonUp.addEventListener('click', function(e) {
+	window.scrollTo({top: 0, behavior: 'smooth'});
+	e.preventDefault()
+	e.stopPropagation()
+})
+window.onscroll = function() {scrollFunction()}
+function scrollFunction() {
+	if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+		buttonUp.style.display = "block";
+	} else {
+		buttonUp.style.display = "none";
+	}
+}
+scrollFunction()
 
+
+//sticky header
+window.addEventListener("scroll", function () {
+	let windowTop = window.scrollY;
+	if (windowTop > 0) {
+		document.querySelector(".wrap").classList.add("header-fixed");
+	} else {
+		document.querySelector(".wrap").classList.remove("header-fixed");
+	}
+});
 
 //fancybox
 Fancybox.bind("[data-fancybox]", {
@@ -173,6 +199,7 @@ popupElements.forEach(element => {
 document.querySelectorAll('.js-anchor').forEach(anchor => {
 	anchor.addEventListener('click', function (e) {
 		e.preventDefault();
+		document.querySelector('.popup-menu-wrap .js-btn-popup-toggle').classList.remove('active')
 		document.querySelector(this.getAttribute('href')).scrollIntoView({
 			behavior: 'smooth'
 		});

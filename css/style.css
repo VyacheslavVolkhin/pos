@@ -548,7 +548,28 @@ html {
 .footer a:hover {
   color: var(--clr-att);
 }
+.footer .btn-action-up {
+  width: 55px;
+  width: 5.5rem;
+  height: 55px;
+  height: 5.5rem;
+  position: fixed;
+  bottom: var(--paddingContainer);
+  right: var(--paddingContainer);
+  transform: rotate(180deg);
+}
+.wrap {
+  padding-top: 73px;
+}
+.header-fixed .header {
+  background: #1C1718A6;
+}
 .header {
+  position: fixed;
+  background: var(--clr-bg-dark);
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 99;
   padding: 10px 0;
   margin-bottom: 10px;
@@ -725,11 +746,17 @@ html {
   }
 }
 @media (min-width: 768px) {
+  .wrap {
+    padding-top: calc(63px + 5rem);
+  }
   .header {
     margin-bottom: 5rem;
   }
 }
 @media (min-width: 1024px) {
+  .wrap {
+    padding-top: calc(85px + 5rem);
+  }
   .footer {
     text-align: left;
     padding: 5rem 0;
@@ -828,6 +855,12 @@ html {
   .header .contacts-inner-wrap {
     padding-right: 28px;
   }
+  /* .footer {
+		.btn-action-up {
+			right: 50%;
+			margin-right: -705px;
+		}
+	} */
 }
 /* ----------------------------------- *\
 			items styles
@@ -1386,7 +1419,7 @@ body.popup-open {
   background-color: var(--clr-dark);
 }
 [id^="section"] {
-  scroll-margin-top: 30px;
+  scroll-margin-top: 100px;
 }
 .order-form-box {
   margin-bottom: 30px;
@@ -1898,7 +1931,6 @@ body.popup-open {
   left: 0;
   right: 0;
   padding: 25px 25px 23px 25px;
-  z-index: 2;
 }
 .lead-info-box .photo-title-wrap {
   display: block;
@@ -1913,6 +1945,9 @@ body.popup-open {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   width: 100%;
+}
+.lead-info-box .photo-action-wrap .btn {
+  z-index: 5;
 }
 .lead-info-box .info-inner-wrap {
   margin-bottom: 10px;
@@ -1963,6 +1998,19 @@ body.popup-open {
   font-size: 24px;
   font-weight: 400;
   margin: 0 0 12px 0;
+}
+.lead-info-box .photo-link {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+.lead-info-box .photo-link:hover ~ .elm-photo img,
+.lead-info-box .photo-link:hover ~ .tile-photo img {
+  transform: scale(1.03);
 }
 .about-info-box {
   margin-bottom: 34px;

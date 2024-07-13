@@ -118,7 +118,7 @@ body.popup-open {
 	
 }
 [id^="section"] {
-	scroll-margin-top: 30px;
+	scroll-margin-top: 100px;
 }
 .order-form-box {
 	margin-bottom: 30px;
@@ -606,7 +606,6 @@ body.popup-open {
 		left: 0;
 		right: 0;
 		padding: 25px 25px 23px 25px;
-		z-index: 2;
 	}
 	.photo-title-wrap {
 		display: block;
@@ -619,6 +618,9 @@ body.popup-open {
 		display: block;
 		flex-shrink: 0;
 		width: 100%;
+		.btn {
+			z-index: 5;
+		}
 	}
 	.info-inner-wrap {
 		margin-bottom: 10px;
@@ -666,6 +668,22 @@ body.popup-open {
 		font-size: 24px;
 		font-weight: 400;
 		margin: 0 0 12px 0;
+	}
+	.photo-link {
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+		&:hover {
+			&~.elm-photo, &~.tile-photo {
+				img {
+					transform: scale(1.03);
+				}
+			}
+		}
 	}
 }
 .about-info-box {
