@@ -1,6 +1,15 @@
 /* ----------------------------------- *\
 			items styles
 \* ----------------------------------- */
+.theme-light {
+	.item-tile-info-price .tile-title {
+		color: var(--clr-att);
+	}
+	.item-tile-info {
+		background-color: #fff;
+		border-color: #fff;
+	}
+}
 .item-tile-info-price {
 	text-align: center;
 	display: flex;
@@ -169,6 +178,9 @@
     text-decoration: none;
     line-height: 1;
     //transform: translateZ(0);
+	&.photo-border {
+		border: 1px solid var(--clr-border);
+	}
 	&.photo-video {
 		&:before {
 			position: absolute;

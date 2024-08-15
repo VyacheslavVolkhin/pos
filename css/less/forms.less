@@ -1,6 +1,40 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.theme-light {
+	.frm-field-file {
+		.btn-file {
+			color: #fff;
+		}
+	}
+	.frm-field-input {
+		border-color: var(--clr-light);
+		background: #fff;
+		&.field-dark {
+			background-color: #F9F9F9;
+			.form-input {
+				background-color: #fff;
+				border: 1px solid var(--clr-light);
+				color: var(--clr-base);
+				margin-top: -1px;
+				height: calc(100% + 2px);
+			}
+		}
+	}
+	.frm-field-input .form-input {
+		background-color: #F9F9F9;
+		border-color: var(--clr-light);
+	}
+	.frm-field-input {
+		select.form-input {
+			background-image: url(../img/icons/arrow-select-light.svg);
+		}
+		[placeholder]::-webkit-input-placeholder {color: var(--clr-base);}
+		[placeholder]:-moz-placeholder {color: var(--clr-base);}
+		[placeholder]::-moz-placeholder {color: var(--clr-base);}
+		[placeholder]:-ms-input-placeholder {color: var(--clr-base);}
+	}
+}
 .frm-field-file {
 	display: block;
 	position: relative;

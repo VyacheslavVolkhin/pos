@@ -1,6 +1,48 @@
 /* ----------------------------------- *\
 			inputs elements styles
 \* ----------------------------------- */
+.theme-light {
+	.btn, .btn.button-att {
+		background-color: var(--clr-att);
+		border-color: var(--clr-att);
+		color: #fff;
+		.button-ico {
+			filter: brightness(0) invert(1);
+		}
+		&:hover {
+			background-color: var(--clr-att-hover);
+			border-color: var(--clr-att-hover);
+			color: #fff;
+		}
+	}
+	.btn {
+		&.button-light {
+			background-color: #fff;
+			border-color: #fff;
+			color: var(--clr-att);
+			.button-ico {
+				filter: none;
+				img, svg {
+					filter: none;
+				}
+			}
+		}
+		&.button-dark {
+			.button-ico {
+				filter: brightness(0.8);
+			}
+			&:hover {
+				background-color: var(--clr-att);
+				border-color: var(--clr-att);
+
+				color: #fff;
+				.button-ico {
+					filter: brightness(0) invert(1);
+				}
+			}
+		}
+	}
+}
 .form-input[placeholder] {
     text-overflow: ellipsis;
 }
@@ -200,6 +242,55 @@ select.form-input:required:invalid {
             }
         }
     }
+}
+body {
+	&:not(.theme-light) {
+		.btn-theme-toggle {
+			&:after {
+				margin-left: 0;
+			}
+			&:before {
+				border-color: #DCDCDC;
+				background-color: transparent;
+			}
+			.button-ico {
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+}
+.btn-theme-toggle {
+	width: 112px;
+	height: 24px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+	.button-ico {
+		width: 24px;height: 24px;
+		flex-shrink: 0;
+		margin: 0;
+		transition: all ease 0.2s;
+	}
+	&:before, &:after {
+		content: "";
+		position: absolute;
+		top: 50%;left: 50%;
+		transition: all ease 0.2s;
+	}
+	&:before {
+		width: 44px;height: 24px;
+		border-radius: 12px;
+		border: 1px solid #DCDCDC;
+		margin-top: -12px;
+		margin-left: -22px;
+	}
+	&:after {
+		width: 18px;height: 18px;
+		border-radius: 50%;
+		background-color: var(--clr-att);
+		margin-left: -18px;
+		margin-top: -9px;
+	}
 }
 .btn-action-ico {
     min-width: 0;
